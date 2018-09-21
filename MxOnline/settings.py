@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 AUTHENTICATION_BACKENDS = (
     'users.views.CustomBackend',
+    'rules.permissions.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 INSTALLED_APPS = [
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "DjangoUeditor",
     'captcha',
+    'rules',
 ]
 AUTH_USER_MODEL = "users.UserProfile"
 
