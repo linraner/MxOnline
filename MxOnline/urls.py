@@ -17,6 +17,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+from django.views.static import serve
+from MxOnline.settings import MEDIA_ROOT
 import xadmin
 
 
@@ -33,4 +35,6 @@ urlpatterns = [
     url(r'^register/', RegisterView.as_view(), name='register'),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^org_list/$', OrgView.as_view(), name="org_list"),
+    # 文件上传的文件路径
+    url(r'^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}),
 ]
