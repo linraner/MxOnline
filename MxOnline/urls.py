@@ -28,13 +28,12 @@ from organization.views import OrgView
 
 urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
-
     url('^$', TemplateView.as_view(template_name='index.html'), name='home'),
     url(r'^login/$', LoginView.as_view(), name='login'),
-
     url(r'^register/', RegisterView.as_view(), name='register'),
     url(r'^captcha/', include('captcha.urls')),
-    url(r'^org_list/$', OrgView.as_view(), name="org_list"),
+    url(r'^org/', include('organization.urls', namespace='org')),
     # 文件上传的文件路径
     url(r'^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}),
+
 ]
