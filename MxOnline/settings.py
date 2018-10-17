@@ -26,8 +26,7 @@ SECRET_KEY = 'x@yxh6k)16j2s#w928-zvzq3xt##i%fwtm+wzc-on$6s)hxe$c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u"127.0.0.1",
-                 u"192.168.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -72,8 +71,7 @@ ROOT_URLCONF = 'MxOnline.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

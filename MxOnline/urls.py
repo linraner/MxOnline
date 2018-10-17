@@ -15,15 +15,12 @@ Including another URLconf
 """
 
 from django.conf.urls import url, include
-from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views.static import serve
 from MxOnline.settings import MEDIA_ROOT
 import xadmin
 
-
 from users.views import LoginView, RegisterView
-from organization.views import OrgView
 
 
 urlpatterns = [
@@ -35,5 +32,4 @@ urlpatterns = [
     url(r'^org/', include('organization.urls', namespace='org')),
     # 文件上传的文件路径
     url(r'^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}),
-
 ]
